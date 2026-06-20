@@ -1,26 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Anna Klymchuk · Power BI Portfolio</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap');
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --teal: #1D9E75;
-  --teal-dark: #085041;
-  --teal-light: #E1F5EE;
-  --bg: #F7F6F2;
+  --primary: #1E293B;
+  --primary-dark: #0F172A;
+  --primary-light: #F1F5F9;
+  --accent: #2563EB;
+  --accent-soft: #EFF6FF;
+  --bg: #F8FAFC;
   --surface: #FFFFFF;
-  --border: #E4E2DA;
-  --text: #1C1C1A;
-  --muted: #6B6960;
-  --blue: #2563EB;
-  --tag-bg: #EEF2FF;
+  --border: #E2E8F0;
+  --text: #0F172A;
+  --muted: #64748B;
+  --soft: #F8FAFC;
 }
 
 html { scroll-behavior: smooth; }
@@ -36,24 +37,25 @@ nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(247,246,242,0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid var(--border);
+  height: 60px;
   padding: 0 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 56px;
+  background: rgba(248, 250, 252, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
 }
 
 .nav-logo {
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 700;
-  color: var(--text);
   text-decoration: none;
+  color: var(--primary-dark);
+  letter-spacing: -0.03em;
 }
 
-.nav-logo span { color: var(--teal); }
+.nav-logo span { color: var(--accent); }
 
 .nav-links {
   display: flex;
@@ -63,17 +65,17 @@ nav {
 
 .nav-links a {
   font-size: 0.875rem;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--muted);
   text-decoration: none;
 }
 
-.nav-links a:hover { color: var(--teal); }
+.nav-links a:hover { color: var(--accent); }
 
 .hero {
-  max-width: 900px;
+  max-width: 960px;
   margin: 0 auto;
-  padding: 5rem 2rem 4rem;
+  padding: 5.5rem 2rem 4rem;
 }
 
 .hero-eyebrow {
@@ -81,41 +83,43 @@ nav {
   align-items: center;
   gap: 8px;
   font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--teal);
+  font-weight: 800;
+  color: var(--primary-dark);
   text-transform: uppercase;
   letter-spacing: 0.1em;
-  background: var(--teal-light);
-  padding: 5px 14px;
+  background: var(--primary-light);
+  border: 1px solid var(--border);
+  padding: 6px 14px;
   border-radius: 100px;
   margin-bottom: 1.5rem;
 }
 
 .hero-eyebrow::before {
   content: '';
-  width: 6px;
-  height: 6px;
-  background: var(--teal);
+  width: 7px;
+  height: 7px;
   border-radius: 50%;
+  background: var(--accent);
 }
 
 h1 {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: clamp(2.3rem, 5vw, 3.7rem);
-  line-height: 1.08;
-  letter-spacing: -0.04em;
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1.05;
+  letter-spacing: -0.045em;
   margin-bottom: 1.25rem;
+  color: var(--primary-dark);
 }
 
 h1 em {
   font-style: normal;
-  color: var(--teal);
+  color: var(--accent);
 }
 
 .hero-desc {
-  font-size: 1.125rem;
+  font-size: 1.13rem;
   color: var(--muted);
-  max-width: 650px;
+  max-width: 680px;
   margin-bottom: 2rem;
 }
 
@@ -127,18 +131,19 @@ h1 em {
 
 .badge, .tool {
   font-size: 0.8rem;
-  font-weight: 600;
-  padding: 5px 13px;
+  font-weight: 700;
+  padding: 6px 13px;
   border-radius: 100px;
   background: var(--surface);
   border: 1px solid var(--border);
+  color: var(--primary);
 }
 
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
-  margin-top: 2rem;
+  margin-top: 2.25rem;
 }
 
 .btn {
@@ -146,25 +151,31 @@ h1 em {
   align-items: center;
   gap: 8px;
   padding: 12px 22px;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 0.9rem;
-  font-weight: 700;
+  font-weight: 800;
   text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
 }
 
 .btn-primary {
-  background: var(--teal);
+  background: var(--primary-dark);
   color: #fff;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.18);
 }
 
 .btn-secondary {
   background: var(--surface);
-  color: var(--text);
+  color: var(--primary-dark);
   border: 1px solid var(--border);
 }
 
 .stats {
-  max-width: 900px;
+  max-width: 960px;
   margin: 0 auto 5rem;
   padding: 0 2rem;
   display: grid;
@@ -175,24 +186,25 @@ h1 em {
 .stat-card {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 1.25rem;
+  border-radius: 16px;
+  padding: 1.35rem;
 }
 
 .stat-num {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.55rem;
   font-weight: 700;
-  color: var(--teal);
+  color: var(--primary-dark);
+  margin-bottom: 0.25rem;
 }
 
 .stat-label {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: var(--muted);
 }
 
 section {
-  max-width: 900px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 2rem 5rem;
 }
@@ -200,15 +212,16 @@ section {
 .section-label {
   font-size: 0.7rem;
   font-weight: 800;
-  color: var(--teal);
+  color: var(--accent);
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.14em;
   margin-bottom: 0.5rem;
 }
 
 h2 {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.9rem;
+  letter-spacing: -0.03em;
   margin-bottom: 2rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid var(--border);
@@ -217,33 +230,38 @@ h2 {
 .project {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 16px;
+  border-radius: 18px;
   padding: 2rem;
   margin-bottom: 1.5rem;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
 }
 
 .project-top {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
   margin-bottom: 1rem;
 }
 
 .project-tag {
+  display: inline-flex;
   font-size: 0.7rem;
   font-weight: 800;
-  padding: 4px 10px;
+  padding: 5px 11px;
   border-radius: 100px;
   text-transform: uppercase;
-  background: var(--teal-light);
-  color: var(--teal-dark);
+  letter-spacing: 0.08em;
+  background: var(--accent-soft);
+  color: var(--accent);
 }
 
 h3 {
   font-family: 'Space Grotesk', sans-serif;
-  font-size: 1.3rem;
-  margin-bottom: 0.5rem;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.55rem;
 }
 
 .project p {
@@ -259,30 +277,42 @@ h3 {
 }
 
 .box {
-  background: var(--bg);
-  border-left: 3px solid var(--teal);
-  border-radius: 0 10px 10px 0;
+  background: var(--soft);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 12px 12px 0;
   padding: 1rem;
   font-size: 0.9rem;
+  color: var(--muted);
 }
 
 .box strong {
   display: block;
-  color: var(--text);
-  margin-bottom: 0.3rem;
+  color: var(--primary-dark);
+  margin-bottom: 0.35rem;
 }
 
 .project-links {
   display: flex;
-  gap: 10px;
   flex-wrap: wrap;
-  margin-top: 1rem;
+  gap: 10px;
+  margin-top: 1.25rem;
 }
 
 .project-links a {
-  color: var(--teal-dark);
-  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 14px;
+  border-radius: 9px;
+  font-size: 0.86rem;
+  font-weight: 800;
   text-decoration: none;
+  color: var(--primary-dark);
+  background: var(--primary-light);
+  border: 1px solid var(--border);
+}
+
+.project-links a:hover {
+  color: var(--accent);
 }
 
 .skills-grid {
@@ -294,319 +324,4 @@ h3 {
 .skill-card {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 14px;
-  padding: 1.25rem;
-}
-
-.skill-card h4 {
-  margin-bottom: 0.4rem;
-}
-
-.skill-card p {
-  color: var(--muted);
-  font-size: 0.9rem;
-}
-
-.contact-card {
-  background: var(--teal);
-  color: #fff;
-  border-radius: 18px;
-  padding: 3rem 2rem;
-  text-align: center;
-}
-
-.contact-card p {
-  opacity: 0.9;
-  margin: 1rem 0 2rem;
-}
-
-.contact-links {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-
-.contact-links a {
-  color: #fff;
-  text-decoration: none;
-  border: 1px solid rgba(255,255,255,0.35);
-  padding: 10px 18px;
-  border-radius: 8px;
-  font-weight: 600;
-}
-
-footer {
-  text-align: center;
-  padding: 2rem;
-  color: var(--muted);
-  font-size: 0.8rem;
-  border-top: 1px solid var(--border);
-}
-
-@media (max-width: 700px) {
-  .nav-links { display: none; }
-  .stats { grid-template-columns: repeat(2, 1fr); }
-  .project-grid, .skills-grid { grid-template-columns: 1fr; }
-}
-</style>
-</head>
-
-<body>
-
-<nav>
-  <a class="nav-logo" href="#">AK <span>·</span> Power BI</a>
-  <ul class="nav-links">
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
-<div class="hero">
-  <div class="hero-eyebrow">Available for freelance</div>
-
-  <h1>Power BI dashboards<br><em>that turn data into decisions</em></h1>
-
-  <p class="hero-desc">
-    I build business dashboards, automate reporting, clean data, and create analytical models using Power BI, DAX, Power Query, SQL, PostgreSQL and Python.
-  </p>
-
-  <div class="hero-tags">
-    <span class="badge">Power BI</span>
-    <span class="badge">DAX</span>
-    <span class="badge">Power Query</span>
-    <span class="badge">SQL</span>
-    <span class="badge">PostgreSQL</span>
-    <span class="badge">Python</span>
-    <span class="badge">ETL</span>
-    <span class="badge">Healthcare Analytics</span>
-  </div>
-
-  <div class="hero-actions">
-    <a class="btn btn-primary" href="#projects">View portfolio →</a>
-    <a class="btn btn-secondary" href="https://github.com/AnyKlymchuk" target="_blank">GitHub</a>
-  </div>
-</div>
-
-<div class="stats">
-  <div class="stat-card">
-    <div class="stat-num">15+</div>
-    <div class="stat-label">Years with business data</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-num">6M+</div>
-    <div class="stat-label">Rows processed</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-num">80%</div>
-    <div class="stat-label">Manual work reduced</div>
-  </div>
-  <div class="stat-card">
-    <div class="stat-num">SQL → BI</div>
-    <div class="stat-label">End-to-end reporting</div>
-  </div>
-</div>
-
-<section id="projects">
-  <p class="section-label">Portfolio</p>
-  <h2>Selected Projects</h2>
-
-  <div class="project">
-    <div class="project-top">
-      <span class="project-tag">Healthcare · Power BI</span>
-    </div>
-    <h3>Laboratory TAT Dashboard</h3>
-    <p>Dashboard for analyzing laboratory turnaround time, delays, SLA performance and operational bottlenecks.</p>
-
-    <div class="project-grid">
-      <div class="box">
-        <strong>Business problem</strong>
-        Management needed to understand where delays happen: collection, transfer, pre-analytics, department processing or result delivery.
-      </div>
-      <div class="box">
-        <strong>Solution</strong>
-        Built a Power BI model with TAT stages, waterfall analysis, SLA indicators and delay decomposition.
-      </div>
-    </div>
-
-    <div class="tools">
-      <span class="tool">Power BI</span>
-      <span class="tool">DAX</span>
-      <span class="tool">Power Query</span>
-      <span class="tool">PostgreSQL</span>
-      <span class="tool">Healthcare Data</span>
-    </div>
-  </div>
-
-  <div class="project">
-    <div class="project-top">
-      <span class="project-tag">Sales Analytics</span>
-    </div>
-    <h3>Medical Sales & Counterparty Analytics</h3>
-    <p>Analytical dashboard for revenue, branches, doctors, counterparties, bonuses and client responsibility tracking.</p>
-
-    <div class="project-grid">
-      <div class="box">
-        <strong>Business problem</strong>
-        Sales data was spread across multiple sources and difficult to analyze by branch, doctor, region and counterparty.
-      </div>
-      <div class="box">
-        <strong>Solution</strong>
-        Created a cleaned analytical layer, business rules and Power BI dashboard with revenue KPIs and segmentation.
-      </div>
-    </div>
-
-    <div class="tools">
-      <span class="tool">Power BI</span>
-      <span class="tool">DAX</span>
-      <span class="tool">SQL</span>
-      <span class="tool">CRM Data</span>
-      <span class="tool">Sales KPIs</span>
-    </div>
-  </div>
-
-  <div class="project">
-    <div class="project-top">
-      <span class="project-tag">ETL · Data Engineering</span>
-    </div>
-    <h3>Data Lake ETL Automation</h3>
-    <p>Python and PostgreSQL pipeline for loading, cleaning and storing large CSV datasets for Power BI reporting.</p>
-
-    <div class="project-grid">
-      <div class="box">
-        <strong>Business problem</strong>
-        Monthly files had changing columns, duplicates, encoding issues and manual refresh risks.
-      </div>
-      <div class="box">
-        <strong>Solution</strong>
-        Built an ETL approach with file validation, incremental load logic, timestamp tracking and PostgreSQL staging tables.
-      </div>
-    </div>
-
-    <div class="tools">
-      <span class="tool">Python</span>
-      <span class="tool">Pandas</span>
-      <span class="tool">PostgreSQL</span>
-      <span class="tool">CSV Processing</span>
-      <span class="tool">ETL</span>
-    </div>
-  </div>
-
-<div class="project">
-    <div class="project-top">
-        <span class="project-tag">Executive Dashboard</span>
-    </div>
-
-    <h3>CEO Performance Dashboard</h3>
-
-    <p>
-        Executive dashboard designed for top management to monitor revenue,
-        profitability, sales performance and key business indicators in real time.
-    </p>
-
-    <div class="project-grid">
-
-        <div class="box">
-            <strong>Business problem</strong>
-            Executives had to collect information from multiple reports and departments
-            before making decisions.
-        </div>
-
-        <div class="box">
-            <strong>Solution</strong>
-            Developed a single Power BI dashboard combining financial, sales and operational KPIs
-            with drill-down capabilities and automated refresh.
-        </div>
-
-    </div>
-
-    <div class="tools">
-        <span class="tool">Power BI</span>
-        <span class="tool">DAX</span>
-        <span class="tool">Power Query</span>
-        <span class="tool">PostgreSQL</span>
-        <span class="tool">Executive Reporting</span>
-        <span class="tool">KPI Monitoring</span>
-    </div>
-
-    <div class="project-links">
-        <a href="#">View Dashboard</a>
-        <a href="#">Case Study</a>
-    </div>
-</div>
-  
-  <div class="project">
-    <div class="project-top">
-      <span class="project-tag">Finance · Planning</span>
-    </div>
-    <h3>Plan vs Fact Dashboard</h3>
-    <p>Dashboard for comparing planned and actual business performance across periods, regions and business units.</p>
-
-    <div class="project-grid">
-      <div class="box">
-        <strong>Business problem</strong>
-        Teams needed a clear view of plan completion, deviations and performance trends.
-      </div>
-      <div class="box">
-        <strong>Solution</strong>
-        Built Power BI measures, calendar logic and interactive filters for plan-fact analysis.
-      </div>
-    </div>
-
-    <div class="tools">
-      <span class="tool">Power BI</span>
-      <span class="tool">DAX</span>
-      <span class="tool">KPI</span>
-      <span class="tool">Finance Analytics</span>
-    </div>
-  </div>
-
-</section>
-
-<section id="skills">
-  <p class="section-label">Skills</p>
-  <h2>What I can help with</h2>
-
-  <div class="skills-grid">
-    <div class="skill-card">
-      <h4>Dashboard Development</h4>
-      <p>Power BI reports, KPI pages, drill-through, filters, business logic and clean visual design.</p>
-    </div>
-
-    <div class="skill-card">
-      <h4>Data Cleaning & Modeling</h4>
-      <p>Power Query, SQL transformations, relationships, star schema and reusable data models.</p>
-    </div>
-
-    <div class="skill-card">
-      <h4>DAX Measures</h4>
-      <p>Revenue, margin, average check, plan-fact, SLA, TAT, dynamic measures and time intelligence.</p>
-    </div>
-
-    <div class="skill-card">
-      <h4>ETL Automation</h4>
-      <p>Python scripts, PostgreSQL staging, CSV loading, incremental refresh logic and data validation.</p>
-    </div>
-  </div>
-</section>
-
-<section id="contact">
-  <div class="contact-card">
-    <h3>Need a Power BI dashboard or data cleanup?</h3>
-    <p>I am open to freelance projects, small BI tasks, dashboard fixes and reporting automation.</p>
-
-    <div class="contact-links">
-      <a href="https://github.com/AnyKlymchuk" target="_blank">GitHub</a>
-      <a href="mailto:your.email@example.com">Email</a>
-      <a href="https://www.upwork.com/" target="_blank">Upwork</a>
-    </div>
-  </div>
-</section>
-
-<footer>
-  © 2026 Anna Klymchuk · Power BI Portfolio
-</footer>
-
-</body>
-</html>
+  borde
