@@ -87,6 +87,11 @@ h2{
   font-size:24px;
 }
 
+h3{
+  font-size:17px;
+  margin-bottom:8px;
+}
+
 .image{
   width:100%;
   border-radius:16px;
@@ -109,7 +114,7 @@ h2{
 
 .kpi-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
+  grid-template-columns:repeat(5,1fr);
   gap:16px;
 }
 
@@ -117,23 +122,33 @@ h2{
   background:#f8fafc;
   border:1px solid #e2e8f0;
   border-radius:16px;
-  padding:22px;
+  padding:22px 12px;
   text-align:center;
 }
 
 .kpi strong{
   display:block;
-  font-size:28px;
+  font-size:22px;
   color:#0f172a;
 }
 
 .kpi span{
   color:#64748b;
-  font-size:14px;
+  font-size:13px;
+}
+
+.stat-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:16px;
 }
 
 ul{
   padding-left:22px;
+}
+
+li{
+  margin-bottom:6px;
 }
 
 .actions{
@@ -160,7 +175,8 @@ ul{
 
 @media(max-width:800px){
   h1{font-size:32px;}
-  .grid,.kpi-grid{grid-template-columns:1fr;}
+  .grid,.stat-grid{grid-template-columns:1fr;}
+  .kpi-grid{grid-template-columns:repeat(2,1fr);}
 }
 </style>
 </head>
@@ -177,8 +193,10 @@ ul{
     <h1>CEO Executive Sales Dashboard</h1>
 
     <p class="subtitle">
-      Executive Power BI dashboard for monitoring sales performance,
-      Budget vs Actual, pipeline health, regional performance, and forecast scenarios.
+      An executive Power BI dashboard for the CEO to track Budget vs Actual
+      performance, monthly sales dynamics, open vs won opportunity pipeline,
+      and territory/industry forecasts — with a built-in What-if scenario
+      parameter for budget adjustments.
     </p>
 
     <div class="tools">
@@ -187,7 +205,8 @@ ul{
       <span class="tool">Power Query</span>
       <span class="tool">Data Modeling</span>
       <span class="tool">Star Schema</span>
-      <span class="tool">What-if Analysis</span>
+      <span class="tool">What-if Parameter</span>
+      <span class="tool">Disconnected Table</span>
       <span class="tool">Business Intelligence</span>
     </div>
   </div>
@@ -204,39 +223,38 @@ ul{
       <div class="box">
         <h3>Business Challenge</h3>
         <p>
-          Executive management needed one clear report to track revenue,
-          budget achievement, sales pipeline, monthly dynamics, and regional performance
-          without using several separate Excel files.
+          Executive management needed a single report to monitor sales
+          performance against budget, track the health of the open/won
+          opportunity pipeline, and review forecasts by territory and
+          industry — without manually consolidating data from multiple
+          Excel files.
         </p>
       </div>
 
       <div class="box">
         <h3>Solution</h3>
         <p>
-          I built an interactive Power BI dashboard with executive KPI cards,
-          Budget vs Actual analysis, monthly sales trends, pipeline overview,
-          territory comparison, and What-if forecast adjustment.
+          I built a single-page Power BI report with executive KPI cards,
+          a 12-month "Actual vs Budget" chart with color-coded performance
+          indicators, an Open vs Won opportunities trend, and forecast
+          tables broken down by territory and industry. The report is
+          fully driven by Period, Manager, Category and Region filters,
+          plus an Open/Won toggle.
         </p>
       </div>
     </div>
   </div>
 
   <div class="section">
-    <h2>Business Results</h2>
+    <h2>Key Metrics on the Dashboard</h2>
 
     <div class="kpi-grid">
-      <div class="kpi"><strong>10+</strong><span>Executive KPI Cards</span></div>
-      <div class="kpi"><strong>15+</strong><span>Interactive Visuals</span></div>
-      <div class="kpi"><strong>5</strong><span>Report Pages</span></div>
-      <div class="kpi"><strong>7+</strong><span>DAX Measures</span></div>
-      <div class="kpi"><strong>100%</strong><span>Interactive Filtering</span></div>
-      <div class="kpi"><strong>What-if</strong><span>Forecast Scenario</span></div>
+      <div class="kpi"><strong>14.5M</strong><span>Revenue Won</span></div>
+      <div class="kpi"><strong>16.2M</strong><span>Sales Won</span></div>
+      <div class="kpi"><strong>3,196</strong><span>Unit Won</span></div>
+      <div class="kpi"><strong>5,215</strong><span>Avg Check Won</span></div>
+      <div class="kpi"><strong>14.5M</strong><span>Budget Won</span></div>
     </div>
-  </div>
-
-  <div class="section">
-    <h2>Data Model</h2>
-    <img src="ceo-model-view.png" alt="CEO Executive Sales Dashboard Data Model" class="image">
   </div>
 
   <div class="section">
@@ -244,29 +262,65 @@ ul{
 
     <div class="grid">
       <div class="box">
-        <h3>Dashboard Features</h3>
+        <h3>Visuals</h3>
         <ul>
-          <li>Executive KPI overview</li>
-          <li>Budget vs Actual analysis</li>
-          <li>Monthly sales trends</li>
-          <li>Pipeline overview</li>
-          <li>Territory performance</li>
-          <li>Dynamic KPI selector</li>
-          <li>What-if forecast scenario</li>
-          <li>Interactive slicers</li>
+          <li>Executive KPI cards: Revenue, Sales, Unit, Avg Check, Budget Won</li>
+          <li>"Sales vs Budget" chart for the last 12 months with color-coded
+            achievement (green ≥ 100%, yellow 90–99.9%, red &lt; 90% of budget)</li>
+          <li>Budget Achievement % donut chart</li>
+          <li>"Monthly Open vs Won Opportunities" trend</li>
+          <li>"Forecast by Territory" table: Revenue Won, In Pipeline, Forecast %</li>
+          <li>"Forecast by Industry" table with order-level detail</li>
         </ul>
       </div>
 
       <div class="box">
-        <h3>Business Value</h3>
+        <h3>Interactivity</h3>
         <ul>
-          <li>Reduced manual reporting</li>
-          <li>Faster executive decision-making</li>
-          <li>Better sales visibility</li>
-          <li>Improved budget control</li>
-          <li>Forecast simulation</li>
-          <li>One source of truth for sales reporting</li>
+          <li>Period, Manager, Category and Region filters</li>
+          <li>Open / Won toggle for quickly switching the pipeline view</li>
+          <li>What-if "Budget Adjustment (%)" parameter for real-time
+            scenario planning</li>
+          <li>Adaptive layout with dedicated desktop and mobile views</li>
         </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Data Model</h2>
+    <img src="ceo-model-view.png" alt="CEO Executive Sales Dashboard Data Model" class="image">
+    <p style="margin-top:16px;color:#475569;">
+      A classic star schema: the fact table <strong>FT_Opportunities</strong>
+      is connected to dimension tables <strong>Dim_Accounts, Dim_Contacts,
+      Dim_Products, Dim_Campaigns, Dim_Territories, Dim_Industries,
+      Dim_Owners</strong> and <strong>Dim_Calendar</strong>. A separate
+      <strong>Dim_Calendar Disconnected</strong> table enables an
+      independent analysis-period selector, along with supporting tables
+      <strong>_CEO_KPI</strong> (dynamic KPI selector),
+      <strong>_CEO_Parameter</strong> and
+      <strong>_CEO_Forecast_Adjustment</strong> (the What-if parameter used
+      for scenario-based forecast/budget adjustments).
+    </p>
+  </div>
+
+  <div class="section">
+    <h2>Business Value</h2>
+    <div class="stat-grid">
+      <div class="box">
+        <h3>Faster decisions</h3>
+        <p>Leadership sees budget performance and pipeline health on one
+        screen instead of manually consolidating multiple files.</p>
+      </div>
+      <div class="box">
+        <h3>Transparent budget control</h3>
+        <p>Color-coded actual vs budget by month instantly highlights
+        underperforming periods and territories.</p>
+      </div>
+      <div class="box">
+        <h3>Scenario planning</h3>
+        <p>The What-if parameter lets the forecast be instantly recalculated
+        as budget assumptions change.</p>
       </div>
     </div>
   </div>
