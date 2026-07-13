@@ -506,6 +506,34 @@ footer {
   </div>
 
   <div class="project">
+    <span class="project-tag">Debugging</span>
+    <h3>Error Search & Fixing in Power BI / Power Query</h3>
+    <p>Finding the root cause behind wrong numbers and refresh failures in Power Query and DAX, then fixing the logic without breaking the rest of the model.</p>
+
+    <div class="project-grid">
+      <div class="box">
+        <strong>Business problem</strong>
+        A dataflow returned incorrect prices for one category, and a Power BI model failed with
+        "Cannot find table" and null-to-text conversion errors during refresh.
+      </div>
+      <div class="box">
+        <strong>Solution</strong>
+        Traced each issue back to its source — a wrong list/table reference, an unhandled null
+        value, and a mismatched table name — verified the fix step by step against real order
+        data, and confirmed the numbers matched before deployment.
+      </div>
+    </div>
+
+    <div class="tools">
+      <span class="tool">Power Query (M)</span>
+      <span class="tool">DAX</span>
+      <span class="tool">Refresh Errors</span>
+      <span class="tool">Root Cause Analysis</span>
+      <span class="tool">Data Validation</span>
+    </div>
+  </div>
+
+  <div class="project">
     <span class="project-tag">Healthcare Analytics</span>
     <h3>Laboratory TAT Dashboard</h3>
     <p>Dashboard for analyzing laboratory turnaround time, delays, SLA performance and operational bottlenecks.</p>
