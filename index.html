@@ -22,6 +22,8 @@
   --text: #0F172A;
   --muted: #64748B;
   --soft: #F8FAFC;
+  --warn: #DC2626;
+  --warn-soft: #FEF2F2;
 }
 
 html { scroll-behavior: smooth; }
@@ -119,7 +121,16 @@ h1 em {
   font-size: 1.13rem;
   color: var(--muted);
   max-width: 700px;
+  margin-bottom: 1.25rem;
+}
+
+.hero-tagline {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--primary-dark);
+  max-width: 700px;
   margin-bottom: 2rem;
+  line-height: 1.5;
 }
 
 .hero-tags, .tools {
@@ -166,6 +177,85 @@ h1 em {
   border: 1px solid var(--border);
 }
 
+/* Pain points */
+.pain-points {
+  max-width: 960px;
+  margin: 0 auto 3rem;
+  padding: 0 2rem;
+}
+
+.pain-points-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--muted);
+  margin-bottom: 0.85rem;
+}
+
+.pain-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pain-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 100px;
+  background: var(--warn-soft);
+  border: 1px solid #FECACA;
+  color: #991B1B;
+}
+
+.pain-item::before {
+  content: '✕';
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--warn);
+}
+
+.requests {
+  max-width: 960px;
+  margin: 0 auto 5rem;
+  padding: 0 2rem;
+}
+
+.requests-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--muted);
+  margin-bottom: 0.85rem;
+}
+
+.request-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.request-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 8px 14px;
+  border-radius: 100px;
+  background: var(--accent-soft);
+  border: 1px solid #BFDBFE;
+  color: #1D4ED8;
+}
+
+.request-item::before {
+  content: '✓';
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
 .stats {
   max-width: 960px;
   margin: 0 auto 5rem;
@@ -192,6 +282,28 @@ h1 em {
 .stat-label {
   font-size: 0.82rem;
   color: var(--muted);
+}
+
+.stat-card.service-card {
+  text-align: left;
+}
+
+.stat-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
+.service-card .stat-num {
+  font-size: 1.02rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+}
+
+.service-card .stat-label {
+  font-size: 0.82rem;
+  line-height: 1.45;
 }
 
 section {
@@ -271,6 +383,65 @@ h2 {
   margin: 0;
 }
 
+/* How I Can Help */
+.help-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.help-item {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 1.4rem;
+}
+
+.help-number {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 8px;
+  padding: 4px 10px;
+  flex-shrink: 0;
+}
+
+.help-item h3 {
+  font-size: 1.02rem;
+  margin-bottom: 0.4rem;
+}
+
+.help-item p {
+  color: var(--muted);
+  font-size: 0.87rem;
+  margin: 0;
+}
+
+.help-link {
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.help-link:hover {
+  transform: translateY(-3px);
+  border-color: #BFDBFE;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.help-action {
+  display: inline-block;
+  margin-top: 0.8rem;
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
 .project {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -290,6 +461,18 @@ h2 {
   background: var(--accent-soft);
   color: var(--accent);
   margin-bottom: 1rem;
+}
+
+.project-featured {
+  display: inline-flex;
+  font-size: 0.7rem;
+  font-weight: 800;
+  padding: 5px 11px;
+  border-radius: 100px;
+  background: #FEF3C7;
+  color: #92400E;
+  margin-bottom: 1rem;
+  margin-left: 8px;
 }
 
 h3 {
@@ -416,7 +599,7 @@ footer {
 @media (max-width: 700px) {
   .nav-links { display: none; }
   .stats { grid-template-columns: repeat(2, 1fr); }
-  .project-grid, .skills-grid { grid-template-columns: 1fr; }
+  .project-grid, .skills-grid, .help-grid { grid-template-columns: 1fr; }
   .about-grid { grid-template-columns: 1fr; }
 }
 </style>
@@ -429,7 +612,7 @@ footer {
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
-    <li><a href="#services">Services</a></li>
+    <li><a href="#services">How I Can Help</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -438,35 +621,79 @@ footer {
 <div class="hero">
   <div class="hero-eyebrow">Power BI Developer & Data Analyst</div>
 
-  <h1>Dashboards, Excel reports<br><em>and data automation</em></h1>
+  <h1>Fix Reporting Problems.<br>Optimize Dashboards.<br><em>Automate Reporting.</em></h1>
 
   <p class="hero-desc">
-    I help businesses build Power BI dashboards, fix reporting errors, automate Excel reports,
-    and connect databases to Excel or Power BI.
+    I help businesses solve reporting problems by finding and fixing reporting issues,
+    optimizing Power BI dashboards, validating data, connecting databases, and automating reporting.
+  </p>
+
+  <p class="hero-tagline">
+    Wrong numbers? Broken report? Slow dashboard? I'll find the problem and fix it.
   </p>
 
   <div class="hero-tags">
     <span class="badge">Power BI</span>
-    <span class="badge">Excel Reports</span>
     <span class="badge">Power Query</span>
     <span class="badge">DAX</span>
     <span class="badge">SQL</span>
     <span class="badge">PostgreSQL</span>
-    <span class="badge">Data Cleaning</span>
-    <span class="badge">Error Fixing</span>
+    <span class="badge">Excel Automation</span>
+    <span class="badge">Data Validation</span>
+    <span class="badge">Report Troubleshooting</span>
   </div>
 
   <div class="hero-actions">
     <a class="btn btn-primary" href="#projects">View portfolio →</a>
-    <a class="btn btn-secondary" href="https://github.com/AnyKlymchuk" target="_blank">GitHub</a>
+    <a class="btn btn-secondary" href="https://github.com/AnyKlymchuk" target="_blank" rel="noopener noreferrer">GitHub</a>
+  </div>
+</div>
+
+<div class="pain-points">
+  <div class="pain-points-label">Sound familiar?</div>
+  <div class="pain-list">
+    <span class="pain-item">Wrong numbers</span>
+    <span class="pain-item">Broken reports</span>
+    <span class="pain-item">Refresh errors</span>
+    <span class="pain-item">Missing data</span>
+    <span class="pain-item">Slow dashboards</span>
+    <span class="pain-item">Data mismatch</span>
+  </div>
+</div>
+
+<div class="requests">
+  <div class="requests-label">Common requests I get</div>
+  <div class="request-list">
+    <span class="request-item">Fix my Power BI report</span>
+    <span class="request-item">Fix a DAX measure</span>
+    <span class="request-item">Debug Power Query</span>
+    <span class="request-item">Optimize a dashboard</span>
+    <span class="request-item">Validate report numbers</span>
+    <span class="request-item">Connect PostgreSQL</span>
   </div>
 </div>
 
 <div class="stats">
-  <div class="stat-card"><div class="stat-num">15+</div><div class="stat-label">Years with business data</div></div>
-  <div class="stat-card"><div class="stat-num">6M+</div><div class="stat-label">Rows processed</div></div>
-  <div class="stat-card"><div class="stat-num">80%</div><div class="stat-label">Manual work reduced</div></div>
-  <div class="stat-card"><div class="stat-num">Excel → BI</div><div class="stat-label">Reporting automation</div></div>
+  <div class="stat-card service-card">
+    <span class="stat-icon">🔍</span>
+    <div class="stat-num">Report Troubleshooting</div>
+    <div class="stat-label">Find the root cause of reporting issues and fix them.</div>
+  </div>
+  <div class="stat-card service-card">
+    <span class="stat-icon">⚡</span>
+    <div class="stat-num">Dashboard Optimization</div>
+    <div class="stat-label">Improve report performance and simplify complex models.</div>
+  </div>
+  <div class="stat-card service-card">
+    <span class="stat-icon">📊</span>
+    <div class="stat-num">Data Validation</div>
+    <div class="stat-label">Reconcile numbers and identify incorrect calculations.</div>
+  </div>
+  <div class="stat-card service-card">
+    <span class="stat-icon">🔄</span>
+    <div class="stat-num">Reporting Automation</div>
+    <div class="stat-label">Automate refreshes and reduce manual reporting work.</div>
+  </div>
 </div>
 
 <section id="about">
@@ -476,14 +703,13 @@ footer {
   <div class="about-grid">
     <div class="about-content">
       <p>
-        Hi, I'm Anna — a Power BI Developer and Data Analyst with a strong
-        background in finance and business analytics.
+        Hi, I'm Anna — a Power BI Developer and Data Analyst with a background in finance and business analytics.
       </p>
 
       <p>
-        I help businesses solve reporting problems by building and improving
-        Power BI dashboards, automating Excel reports, connecting databases,
-        and cleaning and transforming data.
+        I help businesses solve reporting problems by finding and fixing reporting issues,
+        optimizing Power BI dashboards, connecting databases,
+        cleaning and transforming data, and automating reporting.
       </p>
 
       <p>
@@ -527,11 +753,225 @@ footer {
   </div>
 </section>
 
+<section id="services">
+  <p class="section-label">Services</p>
+  <h2>How I Can Help</h2>
+
+  <div class="help-grid">
+    <a class="help-item help-link" href="troubleshooting.html">
+      <span class="help-number">01</span>
+      <div>
+        <h3>Report Troubleshooting</h3>
+        <p>Find and fix wrong numbers, broken visuals, refresh failures, and incorrect DAX or Power Query logic.</p>
+        <span class="help-action">View troubleshooting cases →</span>
+      </div>
+    </a>
+
+    <a class="help-item help-link" href="dashboards.html">
+      <span class="help-number">02</span>
+      <div>
+        <h3>Dashboard & Report Development</h3>
+        <p>Power BI dashboards, Excel reports, Google Sheets reports and reusable templates built from scratch.</p>
+        <span class="help-action">View dashboards and reports →</span>
+      </div>
+    </a>
+
+    <a class="help-item help-link" href="excel-reports.html">
+      <span class="help-number">03</span>
+      <div>
+        <h3>Financial Reporting & Automation</h3>
+        <p>Balance Sheet, Cash Flow and P&amp;L templates, reporting automation and reconciliation.</p>
+        <span class="help-action">View financial templates →</span>
+      </div>
+    </a>
+
+    <a class="help-item help-link" href="database-troubleshooting.html">
+      <span class="help-number">04</span>
+      <div>
+        <h3>Database Troubleshooting & Data Validation</h3>
+        <p>Investigate missing, incorrect or duplicated database records, validate SQL and ETL logic, and resolve data loading issues.</p>
+        <span class="help-action">View database cases →</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+
 <section id="projects">
   <p class="section-label">Portfolio</p>
   <h2>Selected Projects</h2>
 
-  <div class="project">
+<div class="project">
+    <span class="project-tag">Debugging</span>
+    <span class="project-featured">⭐ Most Requested</span>
+    <h3>Error Search & Fixing in Power BI / Power Query</h3>
+    <p>Finding the root cause behind wrong numbers and refresh failures in Power Query and DAX, then fixing the logic without breaking the rest of the model.</p>
+
+    <div class="project-grid">
+      <div class="box">
+        <strong>Business challenge</strong>
+        A production dataflow started returning incorrect prices for one analysis category,
+        and a separate Power BI model failed to refresh with "Cannot find table" and
+        null-to-text conversion errors — blocking reporting until resolved.
+      </div>
+      <div class="box">
+        <strong>Root cause</strong>
+        Three unrelated issues traced in parallel: a query referencing the wrong list/table
+        object for a branch lookup, a DAX measure pointing to a table name no longer in the
+        model, and a cleaning step that failed on blank (null) cells instead of skipping them.
+      </div>
+    </div>
+
+    <div class="project-grid">
+      <div class="box">
+        <strong>Solution</strong>
+        <ul>
+          <li>Diagnosed each refresh error using detailed error messages and cell inspection</li>
+          <li>Traced the pricing discrepancy to a mismatched list reference and corrected it</li>
+          <li>Rebuilt null-handling so empty cells pass through safely instead of breaking refresh</li>
+          <li>Verified every fix against real order-level data before deployment</li>
+        </ul>
+      </div>
+      <div class="box">
+        <strong>Business outcome</strong>
+        <ul>
+          <li>Restored accurate category-level pricing in the dataflow</li>
+          <li>Eliminated refresh failures from missing tables and null values</li>
+          <li>Documented each root cause to reduce recurrence risk</li>
+          <li>Increased confidence in report numbers before they reach stakeholders</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tools">
+      <span class="tool">Power Query (M)</span>
+      <span class="tool">DAX</span>
+      <span class="tool">Refresh Error Diagnostics</span>
+      <span class="tool">Root Cause Analysis</span>
+      <span class="tool">Data Validation</span>
+    </div>
+  </div>
+
+<div class="project">
+    <span class="project-tag">Database Troubleshooting</span>
+    <h3>Database Troubleshooting & Data Validation</h3>
+    <p>Investigated why database records were missing or incorrect after loading, traced the issue across SQL queries, ETL transformations and source mappings, and validated the corrected results against the original data.</p>
+
+    <div class="project-grid">
+      <div class="box">
+        <strong>Database Troubleshooting</strong>
+        <ul>
+          <li>Investigate missing records</li>
+          <li>Fix SQL query issues</li>
+        </ul>
+      </div>
+      <div class="box">
+        <strong>Data Validation</strong>
+        <ul>
+          <li>Validate data</li>
+          <li>Detect duplicate or missing records</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="project-grid">
+      <div class="box">
+        <strong>ETL Debugging</strong>
+        <ul>
+          <li>Troubleshoot ETL</li>
+          <li>Resolve refresh failures</li>
+        </ul>
+      </div>
+      <div class="box">
+        <strong>Data Quality</strong>
+        <ul>
+          <li>Verify business rules</li>
+          <li>Resolve incorrect joins and relationships</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tools">
+      <span class="tool">PostgreSQL</span>
+      <span class="tool">SQL</span>
+      <span class="tool">ETL</span>
+      <span class="tool">Excel</span>
+      <span class="tool">Power BI</span>
+      <span class="tool">Data Validation</span>
+      <span class="tool">Root Cause Analysis</span>
+      <span class="tool">Data Refresh</span>
+    </div>
+  </div>
+
+<div class="project">
+    <span class="project-tag">Financial Reporting</span>
+    <h3>Financial Reporting & Automation</h3>
+    <p>Building automated Excel reports, monthly financial templates, Power Query workflows and reusable reporting models.</p>
+
+    <div class="project-grid">
+      <div class="box"><strong>Business challenge</strong>Monthly financial reports were prepared manually, making reporting slow and prone to errors.</div>
+      <div class="box">
+        <strong>Solution</strong>
+        <ul>
+          <li>Built reusable Cash Flow, P&amp;L, and Balance Sheet templates</li>
+          <li>Automated data preparation with Power Query</li>
+          <li>Reduced manual work and reporting time</li>
+          <li>Improved reporting accuracy</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tools">
+      <span class="tool">Excel</span>
+      <span class="tool">Power Query</span>
+      <span class="tool">Power BI</span>
+      <span class="tool">Cash Flow</span>
+      <span class="tool">Balance Sheet</span>
+      <span class="tool">P&amp;L</span>
+      <span class="tool">Financial Reporting</span>
+      <span class="tool">Automation</span>
+    </div>
+
+    <div class="project-links">
+      <a href="excel-reports.html">View Excel Reports →</a>
+    </div>
+  </div>
+
+<div class="project">
+    <span class="project-tag">Financial Reporting Template</span>
+    <h3>Monthly Cash Flow Template</h3>
+    <p>A reusable Excel Cash Flow Statement — Operating, Investing and Financing activities, fully formula-driven, ready to plug in new monthly actuals.</p>
+
+    <div class="project-grid">
+      <div class="box">
+        <strong>Business challenge</strong>
+        Finance teams need a consistent Cash Flow view every month, but rebuilding
+        the structure from scratch each time wastes hours and introduces errors.
+      </div>
+      <div class="box">
+        <strong>Solution</strong>
+        <ul>
+          <li>Built a 12-month template with Operating, Investing and Financing sections</li>
+          <li>Ending Cash Balance automatically carries forward as next month's Beginning Cash</li>
+          <li>Every total is a live formula — no hardcoded numbers to break</li>
+          <li>Color-coded legend marks input cells vs. formulas, so nobody edits the wrong cell</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="tools">
+      <span class="tool">Excel</span>
+      <span class="tool">Templates</span>
+      <span class="tool">Financial Reporting</span>
+      <span class="tool">Formulas</span>
+    </div>
+
+    <div class="project-links">
+      <a href="Cash_Flow_Template.xlsx" target="_blank" rel="noopener noreferrer">View Template →</a>
+    </div>
+  </div>
+
+<div class="project">
   <span class="project-tag">Executive Sales Dashboard</span>
   <h3>Executive Sales Dashboard</h3>
 
@@ -583,108 +1023,17 @@ footer {
   </div>
 
   <div class="project-links">
-   <a href="ceo-dashboard.html" target="_blank">
-    ▶ View Dashboard</a>
-    <a href="#" target="_blank">Data Model</a>
-    <a href="#" target="_blank">Case Study</a>
+    <a href="ceo-dashboard.html" target="_blank" rel="noopener noreferrer">▶ View Dashboard</a>
   </div>
 </div>
 
-  <div class="project">
-    <span class="project-tag">Excel Reporting</span>
-    <h3>Excel Reports & Error Fixing</h3>
-    <p>Building and fixing Excel reports: formulas, Power Query, data refresh issues, wrong calculations and monthly templates.</p>
-
-    <div class="project-grid">
-      <div class="box"><strong>Business problem</strong>Reports were manual and often contained formula errors or broken links.</div>
-      <div class="box"><strong>Solution</strong>Fixed report logic, automated data preparation and created clean templates.</div>
-    </div>
-
-    <div class="tools">
-      <span class="tool">Excel</span>
-      <span class="tool">Power Query</span>
-      <span class="tool">Formulas</span>
-      <span class="tool">Data Cleaning</span>
-      <span class="tool">Report Fixing</span>
-    </div>
-  </div>
-
-  <div class="project">
-    <span class="project-tag">Debugging</span>
-    <h3>Error Search & Fixing in Power BI / Power Query</h3>
-    <p>Finding the root cause behind wrong numbers and refresh failures in Power Query and DAX, then fixing the logic without breaking the rest of the model.</p>
-
-    <div class="project-grid">
-      <div class="box">
-        <strong>Business challenge</strong>
-        A production dataflow started returning incorrect prices for one analysis category,
-        and a separate Power BI model failed to refresh with "Cannot find table" and
-        null-to-text conversion errors — blocking reporting until resolved.
-      </div>
-      <div class="box">
-        <strong>Root cause</strong>
-        Three unrelated issues traced in parallel: a query referencing the wrong list/table
-        object for a branch lookup, a DAX measure pointing to a table name no longer in the
-        model, and a cleaning step that failed on blank (null) cells instead of skipping them.
-      </div>
-    </div>
-
-    <div class="project-grid">
-      <div class="box">
-        <strong>Solution</strong>
-        <ul>
-          <li>Diagnosed each refresh error using detailed error messages and cell inspection</li>
-          <li>Traced the pricing discrepancy to a mismatched list reference and corrected it</li>
-          <li>Rebuilt null-handling so empty cells pass through safely instead of breaking refresh</li>
-          <li>Verified every fix against real order-level data before deployment</li>
-        </ul>
-      </div>
-      <div class="box">
-        <strong>Business outcome</strong>
-        <ul>
-          <li>Restored accurate category-level pricing in the dataflow</li>
-          <li>Eliminated refresh failures from missing tables and null values</li>
-          <li>Documented each root cause to reduce recurrence risk</li>
-          <li>Increased confidence in report numbers before they reach stakeholders</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="tools">
-      <span class="tool">Power Query (M)</span>
-      <span class="tool">DAX</span>
-      <span class="tool">Refresh Error Diagnostics</span>
-      <span class="tool">Root Cause Analysis</span>
-      <span class="tool">Data Validation</span>
-    </div>
-  </div>
-
-  <div class="project">
-    <span class="project-tag">Database Connection</span>
-    <h3>Database Connection to Excel & Power BI</h3>
-    <p>Setting up database connections for Excel and Power BI, preparing SQL queries and refresh-ready reporting models.</p>
-
-    <div class="project-grid">
-      <div class="box"><strong>Business problem</strong>Data was stored in databases, but users still copied it manually into Excel.</div>
-      <div class="box"><strong>Solution</strong>Connected Excel and Power BI directly to the database with automated refresh logic.</div>
-    </div>
-
-    <div class="tools">
-      <span class="tool">PostgreSQL</span>
-      <span class="tool">SQL</span>
-      <span class="tool">Excel</span>
-      <span class="tool">Power BI</span>
-      <span class="tool">Data Refresh</span>
-    </div>
-  </div>
-
-  <div class="project">
+<div class="project">
     <span class="project-tag">Healthcare Analytics</span>
     <h3>Laboratory TAT Dashboard</h3>
     <p>Dashboard for analyzing laboratory turnaround time, delays, SLA performance and operational bottlenecks.</p>
 
     <div class="project-grid">
-      <div class="box"><strong>Business problem</strong>Management needed to understand where delays happen across laboratory processes.</div>
+      <div class="box"><strong>Business challenge</strong>Management needed to understand where delays happen across laboratory processes.</div>
       <div class="box"><strong>Solution</strong>Built TAT stages, waterfall analysis, SLA indicators and delay decomposition in Power BI.</div>
     </div>
 
@@ -694,35 +1043,13 @@ footer {
       <span class="tool">PostgreSQL</span>
       <span class="tool">Healthcare Data</span>
     </div>
-  </div>
-</section>
 
-<section id="services">
-  <p class="section-label">Services</p>
-  <h2>What I can help with</h2>
-
-  <div class="skills-grid">
-    <div class="skill-card">
-      <h4>Power BI dashboard development</h4>
-      <p>Dashboards, KPI reports, DAX measures, filters, model structure and visual cleanup.</p>
-    </div>
-
-    <div class="skill-card">
-      <h4>Excel report building</h4>
-      <p>Monthly reports, templates, Power Query transformations, formulas and automated refresh.</p>
-    </div>
-
-    <div class="skill-card">
-      <h4>Fixing reporting errors</h4>
-      <p>Broken formulas, wrong totals, refresh errors, Power Query issues and incorrect calculations.</p>
-    </div>
-
-    <div class="skill-card">
-      <h4>Database connection setup</h4>
-      <p>Connecting PostgreSQL or SQL databases to Excel and Power BI with clean refresh logic.</p>
+    <div class="project-links">
+      <a href="tat-dashboard.html" target="_blank" rel="noopener noreferrer">▶ View Dashboard</a>
     </div>
   </div>
 </section>
+
 
 <section id="skills">
   <p class="section-label">Skills</p>
@@ -733,18 +1060,19 @@ footer {
     <div class="skill-card"><h4>Excel</h4><p>Power Query, formulas, pivot tables, reporting templates and data cleanup.</p></div>
     <div class="skill-card"><h4>SQL & PostgreSQL</h4><p>Queries, joins, staging tables, data preparation and connection setup.</p></div>
     <div class="skill-card"><h4>Python ETL</h4><p>CSV processing, data validation, loading logic and reporting automation.</p></div>
+    <div class="skill-card"><h4>Google Sheets</h4><p>Formulas, Apps Script automation, templates and shared reporting workbooks.</p></div>
   </div>
 </section>
 
 <section id="contact">
   <div class="contact-card">
-    <h3>Need a dashboard, Excel report or data connection?</h3>
+    <h3>Need help fixing a report or optimizing a Power BI dashboard?</h3>
     <p>I am open to freelance projects, small BI tasks, Excel report fixes and Power BI automation.</p>
 
     <div class="contact-links">
-      <a href="https://github.com/AnyKlymchuk" target="_blank">GitHub</a>
-      <a href="mailto:your.email@example.com">Email</a>
-      <a href="https://www.upwork.com/" target="_blank">Upwork</a>
+      <a href="https://github.com/AnyKlymchuk" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="mailto:REPLACE_WITH_YOUR_EMAIL@gmail.com">Email</a>
+      <a href="REPLACE_WITH_YOUR_UPWORK_PROFILE_URL" target="_blank" rel="noopener noreferrer">Upwork</a>
     </div>
   </div>
 </section>
