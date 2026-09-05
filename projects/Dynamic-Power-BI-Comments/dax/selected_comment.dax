@@ -1,0 +1,8 @@
+Selected Comment =
+VAR SelectedMonth =
+    SELECTEDVALUE ( 'Calendar'[YearMonth] )
+RETURN
+    CALCULATE (
+        MAX ( Comments[Comment] ),
+        Comments[YearMonth] = SelectedMonth
+    )
