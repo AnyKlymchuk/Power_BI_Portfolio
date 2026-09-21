@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="820" viewBox="0 0 1400 820">
+  <rect width="1400" height="820" fill="#f6f7f8"/>
+  <text x="70" y="72" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#111827">Agents Performance</text>
+
+  <g font-family="Arial, sans-serif">
+    <rect x="720" y="35" width="150" height="42" rx="4" fill="#ffffff" stroke="#e5e7eb"/>
+    <text x="735" y="52" font-size="12" fill="#6b7280">Channel</text><text x="735" y="69" font-size="13" fill="#374151">All</text>
+    <rect x="900" y="35" width="150" height="42" rx="4" fill="#ffffff" stroke="#e5e7eb"/>
+    <text x="915" y="52" font-size="12" fill="#6b7280">Country</text><text x="915" y="69" font-size="13" fill="#374151">All</text>
+    <rect x="1080" y="35" width="150" height="42" rx="4" fill="#ffffff" stroke="#e5e7eb"/>
+    <text x="1095" y="52" font-size="12" fill="#6b7280">Store</text><text x="1095" y="69" font-size="13" fill="#374151">All</text>
+
+    <g>
+      <rect x="70" y="110" width="270" height="190" rx="16" fill="#ffffff"/>
+      <text x="105" y="155" font-size="14" fill="#6b7280">Agents with Positive Change %</text>
+      <text x="105" y="205" font-size="38" font-weight="700" fill="#1f2937">46.42%</text>
+      <rect x="105" y="225" width="115" height="7" rx="4" fill="#dbeafe"/>
+      <rect x="105" y="225" width="72" height="7" rx="4" fill="#60a5fa"/>
+      <text x="105" y="260" font-size="12" fill="#6b7280">Target: 0.55</text>
+    </g>
+
+    <g>
+      <rect x="365" y="110" width="270" height="190" rx="16" fill="#ffffff"/>
+      <text x="400" y="155" font-size="14" fill="#6b7280">Agents Avg MTD Sales</text>
+      <text x="400" y="205" font-size="38" font-weight="700" fill="#1f2937">$34.15M</text>
+      <rect x="400" y="225" width="115" height="7" rx="4" fill="#dbeafe"/>
+      <rect x="400" y="225" width="58" height="7" rx="4" fill="#60a5fa"/>
+      <text x="400" y="260" font-size="12" fill="#6b7280">PM: 38.57M</text>
+    </g>
+
+    <g>
+      <rect x="660" y="110" width="270" height="190" rx="16" fill="#ffffff"/>
+      <text x="695" y="155" font-size="14" fill="#6b7280">Agents Avg MTD % Change</text>
+      <text x="695" y="205" font-size="38" font-weight="700" fill="#1f2937">435.09%</text>
+      <rect x="695" y="225" width="115" height="7" rx="4" fill="#dbeafe"/>
+      <rect x="695" y="225" width="86" height="7" rx="4" fill="#60a5fa"/>
+      <text x="695" y="260" font-size="12" fill="#6b7280">Target: 0.45</text>
+    </g>
+
+    <g>
+      <rect x="955" y="110" width="275" height="190" rx="16" fill="#ffffff"/>
+      <text x="990" y="155" font-size="14" fill="#6b7280">Number of Agents Sold above 100K</text>
+      <text x="990" y="205" font-size="38" font-weight="700" fill="#1f2937">257</text>
+      <rect x="990" y="225" width="115" height="7" rx="4" fill="#dbeafe"/>
+      <rect x="990" y="225" width="92" height="7" rx="4" fill="#60a5fa"/>
+      <text x="990" y="260" font-size="12" fill="#6b7280">Target: 20</text>
+    </g>
+
+    <rect x="70" y="330" width="1160" height="420" rx="16" fill="#ffffff"/>
+    <text x="95" y="370" font-size="13" font-weight="700" fill="#374151">Top/Bottom Field</text>
+    <rect x="95" y="385" width="100" height="38" rx="18" fill="#ffffff" stroke="#d1d5db"/>
+    <text x="116" y="409" font-size="13" font-weight="700" fill="#111827">MOM% Sales</text>
+
+    <text x="95" y="475" font-size="14" font-weight="700" fill="#374151">Total MTD Sales</text>
+    <rect x="145" y="500" width="36" height="130" fill="#c4c4c4"/>
+    <rect x="215" y="595" width="36" height="35" fill="#2997ff"/>
+    <rect x="285" y="618" width="36" height="12" fill="#ff365f"/>
+    <text x="137" y="650" font-size="11" fill="#6b7280">Others</text>
+    <text x="212" y="650" font-size="11" fill="#6b7280">TopN</text>
+    <text x="276" y="650" font-size="11" fill="#6b7280">BottomN</text>
+
+    <line x1="530" y1="355" x2="530" y2="715" stroke="#e5e7eb"/>
+    <text x="565" y="380" font-size="13" font-weight="700" fill="#374151">Agent ID</text>
+    <text x="650" y="380" font-size="13" font-weight="700" fill="#374151">Agent Name</text>
+    <text x="790" y="380" font-size="13" font-weight="700" fill="#374151">Rank</text>
+    <text x="860" y="380" font-size="13" font-weight="700" fill="#374151">MTD Sales</text>
+    <text x="980" y="380" font-size="13" font-weight="700" fill="#374151">vs PM %</text>
+
+    <text x="565" y="420" font-size="12" fill="#374151">219</text>
+      <text x="650" y="420" font-size="12" fill="#374151">Bart Duncan</text>
+      <text x="800" y="420" font-size="12" fill="#374151">1</text>
+      <text x="860" y="420" font-size="12" fill="#374151">$29.10M</text>
+      <text x="980" y="420" font-size="12" fill="#2563eb">▲ 12623.2%</text>
+      <rect x="1090" y="406" width="160" height="14" fill="#2997ff"/><text x="565" y="462" font-size="12" fill="#374151">202</text>
+      <text x="650" y="462" font-size="12" fill="#374151">Alex Simmons</text>
+      <text x="800" y="462" font-size="12" fill="#374151">2</text>
+      <text x="860" y="462" font-size="12" fill="#374151">$1.96M</text>
+      <text x="980" y="462" font-size="12" fill="#2563eb">▲ 12123.5%</text>
+      <rect x="1090" y="448" width="145" height="14" fill="#2997ff"/><text x="565" y="504" font-size="12" fill="#374151">42</text>
+      <text x="650" y="504" font-size="12" fill="#374151">Daniel Taylor</text>
+      <text x="800" y="504" font-size="12" fill="#374151">3</text>
+      <text x="860" y="504" font-size="12" fill="#374151">$9.83M</text>
+      <text x="980" y="504" font-size="12" fill="#2563eb">▲ 10091.0%</text>
+      <rect x="1090" y="490" width="130" height="14" fill="#2997ff"/><text x="565" y="546" font-size="12" fill="#374151">140</text>
+      <text x="650" y="546" font-size="12" fill="#374151">Mike Ray</text>
+      <text x="800" y="546" font-size="12" fill="#374151">4</text>
+      <text x="860" y="546" font-size="12" fill="#374151">$9.31M</text>
+      <text x="980" y="546" font-size="12" fill="#2563eb">▲ 9349.5%</text>
+      <rect x="1090" y="532" width="120" height="14" fill="#2997ff"/><text x="565" y="588" font-size="12" fill="#374151">208</text>
+      <text x="650" y="588" font-size="12" fill="#374151">Bonnie Skelly</text>
+      <text x="800" y="588" font-size="12" fill="#374151">5</text>
+      <text x="860" y="588" font-size="12" fill="#374151">$5.44M</text>
+      <text x="980" y="588" font-size="12" fill="#2563eb">▲ 7963.4%</text>
+      <rect x="1090" y="574" width="105" height="14" fill="#2997ff"/><text x="565" y="630" font-size="12" fill="#374151">142</text>
+      <text x="650" y="630" font-size="12" fill="#374151">April Reagan</text>
+      <text x="800" y="630" font-size="12" fill="#374151">6</text>
+      <text x="860" y="630" font-size="12" fill="#374151">$15.85M</text>
+      <text x="980" y="630" font-size="12" fill="#2563eb">▲ 4816.9%</text>
+      <rect x="1090" y="616" width="90" height="14" fill="#2997ff"/><text x="565" y="672" font-size="12" fill="#374151">232</text>
+      <text x="650" y="672" font-size="12" fill="#374151">Justin Thorp</text>
+      <text x="800" y="672" font-size="12" fill="#374151">7</text>
+      <text x="860" y="672" font-size="12" fill="#374151">$5.12M</text>
+      <text x="980" y="672" font-size="12" fill="#2563eb">▲ 4714.9%</text>
+      <rect x="1090" y="658" width="78" height="14" fill="#2997ff"/>
+  </g>
+</svg>
