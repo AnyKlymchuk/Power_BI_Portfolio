@@ -2,6 +2,8 @@
 
 A compact Power BI portfolio project focused on sales performance, profitability, target tracking, and business-friendly reporting.
 
+![Sales KPI Dashboard preview](images/sales-kpi-dashboard.svg)
+
 ## Business questions
 
 - How much revenue and profit did the business generate?
