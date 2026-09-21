@@ -1,0 +1,23 @@
+name: Portfolio Backup Artifact
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+
+jobs:
+  backup:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Upload portfolio backup
+        uses: actions/upload-artifact@v4
+        with:
+          name: Power_BI_Portfolio_Backup_2026-09-21
+          path: .
+          include-hidden-files: true
+          if-no-files-found: error
