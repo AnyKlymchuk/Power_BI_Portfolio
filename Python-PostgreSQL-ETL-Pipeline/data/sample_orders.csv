@@ -1,0 +1,8 @@
+order_id,customer_id,order_date,amount,status
+1001,C001,2026-10-01,125.50,completed
+1002,C002,2026-10-02,89.00,completed
+1002,C002,2026-10-02,89.00,completed
+1003,C003,not-a-date,210.00,completed
+1004,,2026-10-04,55.25,pending
+1005,C005,2026-10-05,NaN,completed
+1006,C006,2026-10-06,175.00,completed
