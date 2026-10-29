@@ -1,0 +1,35 @@
+Total Revenue =
+SUM(Fact_Sales[Revenue])
+
+Total Profit =
+SUM(Fact_Sales[Profit])
+
+Profit Margin % =
+DIVIDE([Total Profit], [Total Revenue])
+
+Orders =
+DISTINCTCOUNT(Fact_Sales[OrderID])
+
+Avg Order Value =
+DIVIDE([Total Revenue], [Orders])
+
+Revenue LY =
+CALCULATE(
+    [Total Revenue],
+    SAMEPERIODLASTYEAR(Dim_Date[Date])
+)
+
+Revenue YoY % =
+DIVIDE(
+    [Total Revenue] - [Revenue LY],
+    [Revenue LY]
+)
+
+Cancelled Orders =
+CALCULATE(
+    [Orders],
+    Fact_Sales[Status] = "Cancelled"
+)
+
+Cancellation Rate % =
+DIVIDE([Cancelled Orders], [Orders])
