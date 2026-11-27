@@ -1,0 +1,16 @@
+case_id,account_id,currency,status,bank_id,ledger_id,reference,bank_date,ledger_date,bank_amount,ledger_amount,difference,age_days,suggested_owner,action
+CASE-0001,DEMO-001,EUR,duplicate_reference,B006,,DUP-001,2026-10-09,,-75.00,0,-75.00,22,Data team,Review repeated reference; never delete automatically
+CASE-0002,DEMO-001,EUR,duplicate_reference,B007,,DUP-001,2026-10-09,,-75.00,0,-75.00,22,Data team,Review repeated reference; never delete automatically
+CASE-0003,DEMO-001,EUR,duplicate_reference,,L006,DUP-001,,2026-10-09,0,-75.00,75.00,22,Data team,Review repeated reference; never delete automatically
+CASE-0004,DEMO-001,EUR,fee_difference,B004,L004,FEE-001,2026-10-06,2026-10-06,-15.00,-12.00,-3.00,25,Finance,Check fee agreement and posting
+CASE-0005,DEMO-001,EUR,exact_match,B001,L001,INV-101,2026-10-02,2026-10-02,1000.00,1000.00,0.00,29,Automation,No action; retain evidence
+CASE-0006,DEMO-001,EUR,amount_mismatch,B003,L003,INV-102,2026-10-05,2026-10-05,500.00,480.00,20.00,26,Finance,Investigate amount/sign; obtain correction approval
+CASE-0007,DEMO-001,EUR,date_difference,B002,L002,PAY-201,2026-10-03,2026-10-04,-250.00,-250.00,0.00,28,Finance,Check posting/value date; approve timing classification
+CASE-0008,DEMO-001,EUR,exact_match,B011,L009,PAY-202,2026-10-28,2026-10-28,-400.00,-400.00,0.00,3,Automation,No action; retain evidence
+CASE-0009,DEMO-002,USD,exact_match,B012,L010,INV-101,2026-10-02,2026-10-02,200.00,200.00,0.00,29,Automation,No action; retain evidence
+CASE-0010,DEMO-001,EUR,missing_in_ledger,B005,,INV-103,2026-10-08,,300.00,0,300.00,23,Finance,Check missing posting or timing; do not post automatically
+CASE-0011,DEMO-001,EUR,candidate_match,B008,L007,,2026-10-12,2026-10-13,120.00,120.00,0.00,19,Finance,Missing reference: verify candidate manually
+CASE-0012,DEMO-001,EUR,ambiguous_candidate,B009,,,2026-10-15,,60.00,0,60.00,16,Finance,Multiple possible matches; inspect source evidence
+CASE-0013,DEMO-001,EUR,ambiguous_candidate,B010,,,2026-10-15,,60.00,0,60.00,16,Finance,Multiple possible matches; inspect source evidence
+CASE-0014,DEMO-001,EUR,missing_in_bank,,L005,PAY-203,,2026-10-30,0,-90.00,90.00,1,Operations,"Check settlement, statement coverage or next period"
+CASE-0015,DEMO-001,EUR,ambiguous_candidate,,L008,,,2026-10-15,0,60.00,-60.00,16,Finance,Multiple possible matches; inspect source evidence

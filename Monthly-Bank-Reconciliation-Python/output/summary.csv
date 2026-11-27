@@ -1,0 +1,3 @@
+account_id,currency,month,bank_rows,ledger_rows,expected_bank_rows,expected_ledger_rows,invalid_rows,bank_opening,bank_closing,ledger_opening,ledger_closing,bank_movement,ledger_movement,closing_difference,opening_difference,transaction_difference,bank_control_residual,ledger_control_residual,bridge_residual,completeness,exact_bank_rows,exceptions,close_status
+DEMO-001,EUR,2026-10,11,9,11,9,0,10000.00,11225.00,10000.00,10833.00,1225.00,833.00,392.00,0.00,392.00,0.00,0.00,0.00,PASS,2,12,REVIEW REQUIRED
+DEMO-002,USD,2026-10,1,1,1,1,0,2000.00,2200.00,2000.00,2200.00,200.00,200.00,0.00,0.00,0.00,0.00,0.00,0.00,PASS,1,0,READY FOR REVIEW
