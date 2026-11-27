@@ -4,6 +4,11 @@ Portfolio projects focused on Power BI, SQL, PostgreSQL, DAX, Power Query, data 
 
 ## Featured projects
 
+### [Monthly Bank Reconciliation — Python](Monthly-Bank-Reconciliation-Python)
+Synthetic monthly statement-versus-ledger reconciliation with Decimal-based matching, source controls, exception reports, an offline dashboard and 15 automated tests. Includes a Power BI build guide; no native Power BI report is included.
+
+**Skills:** Python · Bank Reconciliation · Data Quality · Financial Analysis · Exception Management
+
 ### [Business Performance Dashboard — Power BI](Business-Performance-Dashboard-PowerBI)
 Management reporting case study with a star-schema model, DAX KPI layer, SQL analysis and business-focused dashboard design.
 

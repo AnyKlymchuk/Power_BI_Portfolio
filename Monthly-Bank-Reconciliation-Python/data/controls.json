@@ -1,0 +1,7 @@
+{
+  "month": "2026-10",
+  "accounts": [
+    {"account_id":"DEMO-001","currency":"EUR","bank_opening":"10000.00","bank_closing":"11225.00","ledger_opening":"10000.00","ledger_closing":"10833.00","expected_bank_rows":11,"expected_ledger_rows":9},
+    {"account_id":"DEMO-002","currency":"USD","bank_opening":"2000.00","bank_closing":"2200.00","ledger_opening":"2000.00","ledger_closing":"2200.00","expected_bank_rows":1,"expected_ledger_rows":1}
+  ]
+}
